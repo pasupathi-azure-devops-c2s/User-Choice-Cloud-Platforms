@@ -7,7 +7,7 @@ This repository provides a modular Terraform setup that allows users to deploy V
 + Deployment Example
 
 
-Project Structure
+##Project Structure
 ```plaintext
 User-Choice-Platform-Tasks
 ├── Virtual-Machines
@@ -52,7 +52,7 @@ User-Choice-Platform-Tasks
 ├── provider.tf
 ├── main.tf
 └── variables.tf
-plaintext```
+
 
 Deployment Example Image
 
