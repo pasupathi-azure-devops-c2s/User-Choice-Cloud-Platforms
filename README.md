@@ -21,39 +21,39 @@ This repository provides a modular Terraform setup that allows users to deploy V
 
 User-Choice-Platform-Tasks
 ├── Virtual-Machines
-│   ├── AWS
+│   ├── AWS-VM
 │   │   ├── AWS-VM.tf
 │   │   └── AWS-VM-Variables.tf
-│   ├── Azure
+│   ├── Azure-VM
 │   │   ├── Azure-VM.tf
 │   │   └── Azure-VM-Variables.tf
-│   ├── GCP
+│   ├── GCP-VM
 │   │   ├── GCP-VM.tf
 │   │   └── GCP-VM-Variables.tf
 │   ├── vm-main.tf
 │   └── vm-variables.tf
 │
 ├── Kubernetes-Cluster
-│   ├── AWS
+│   ├── AWS-Cluster
 │   │   ├── AWS-Cluster.tf
 │   │   └── AWS-Cluster-Variables.tf
-│   ├── Azure
+│   ├── Azure-Cluster
 │   │   ├── Azure-Cluster.tf
 │   │   └── Azure-Cluster-Variables.tf
-│   ├── GCP
+│   ├── GCP-Cluster
 │   │   ├── GCP-Cluster.tf
 │   │   └── GCP-Cluster-Variables.tf
 │   ├── kubernetes-main.tf
 │   └── kubernetes-variables.tf
 │
 ├── Serverless-Engine
-│   ├── AWS
+│   ├── AWS-Engine
 │   │   ├── AWS-Engine.tf
 │   │   └── AWS-Engine-Variables.tf
-│   ├── Azure
+│   ├── Azure-Engine
 │   │   ├── Azure-Engine.tf
 │   │   └── Azure-Engine-Variables.tf
-│   ├── GCP
+│   ├── GCP-Engine
 │   │   ├── GCP-Engine.tf
 │   │   └── GCP-Engine-Variables.tf
 │   ├── Engine-main.tf
@@ -63,6 +63,5 @@ User-Choice-Platform-Tasks
 ├── main.tf
 └── variables.tf
 
-end of plaintext
 
 
