@@ -8,7 +8,7 @@ This repository provides a modular Terraform setup that allows users to deploy V
 
 
 Project Structure
-
+```plaintext
 User-Choice-Platform-Tasks
 ├── Virtual-Machines
 │   ├── AWS
