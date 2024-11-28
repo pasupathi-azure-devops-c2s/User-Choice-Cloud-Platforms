@@ -28,3 +28,25 @@ resource "azurerm_public_ip" "vm-public-ip" {
   
 }
 
+resource "azurerm_network_security_group" "azure-nsg-01" {
+    name = "Azure-NSG-01"
+    resource_group_name = azurerm_resource_group.azure-vm-rg.name
+    location = azurerm_resource_group.azure-vm-rg.location
+
+    #Add the Inbound and Outbound Security rules based on your requirement.
+  
+}
+
+resource "azurerm_network_interface" "azure-interface" {
+    name = "Ubuntu-Internal-IP"
+    resource_group_name = azurerm_resource_group.azure-vm-rg.name
+    location = azurerm_resource_group.azure-vm-rg.location
+
+    ip_configuration {
+      name = "internal"
+      subnet_id = azurerm_subnet.azure-subnet.id
+      public_ip_address_id = azurerm_public_ip.vm-public-ip.id
+      private_ip_address_allocation = "Dynamic"
+    }
+  
+}
