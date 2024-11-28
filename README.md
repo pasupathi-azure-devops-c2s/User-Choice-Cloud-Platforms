@@ -52,7 +52,7 @@ User-Choice-Platform-Tasks
 ├── provider.tf
 ├── main.tf
 └── variables.tf
-
+```plaintext
 
 Deployment Example Image
 
