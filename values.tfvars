@@ -15,3 +15,4 @@ aws-secret-access-key   = "your-aws-secret-access-key"  # AWS Secret Access Key
 # Google Cloud Credentials
 google-project-id       = "your-google-project-id"       # GCP Project ID
 google-credential-file-url = "https://example.com/credentials.json"  # Google Credential file URL (or path to local file)
+
