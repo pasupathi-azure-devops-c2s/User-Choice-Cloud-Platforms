@@ -13,7 +13,7 @@ resource "azurerm_container_registry" "aks-cr" {
 }
 
 resource "azurerm_kubernetes_cluster" "aks-cluster" {
-    name = var.resource-name
+    name = var.resource_name
     location = azurerm_resource_group.aks-rg.location
     resource_group_name = azurerm_resource_group.aks-rg.name
     dns_prefix = "exampleaks01"

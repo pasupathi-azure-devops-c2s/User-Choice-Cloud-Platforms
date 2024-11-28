@@ -50,3 +50,29 @@ resource "azurerm_network_interface" "azure-interface" {
     }
   
 }
+
+resource "azurerm_linux_virtual_machine" "ubuntu-vm" {
+    name = var.resource_name
+    location = azurerm_resource_group.azure-vm-rg.location
+    resource_group_name = azurerm_resource_group.azure-vm-rg.name
+    size = "Standard_DS1_v2"
+
+    admin_username = "Pasupathikumar"
+    admin_password = "NewPassword@1234"
+    disable_password_authentication = false
+
+    network_interface_ids = [azurerm_network_interface.azure-interface.id]
+
+    os_disk {
+      caching = "ReadWrite"
+      storage_account_type = "Standard_LRS"
+    }
+
+    source_image_reference {
+      publisher = "Canonical"
+      offer = "UbuntuServer"
+      sku = "18.04-LTS"
+      version = "latest"
+    }
+  
+}

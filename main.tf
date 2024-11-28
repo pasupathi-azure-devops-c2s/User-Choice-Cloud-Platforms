@@ -1,21 +1,24 @@
-module "Azure" {
-    source = "./Azure-Kuberenetes-Cluster"
-    count  = var.cloud_provider == "Azure" ? 1 : 0
-    resource-name = var.resource-name
+module "Virtual-Machine" {
+    source = "./Virtual-Machine"
+    count  = var.cloud_provider_1 == "Virtual-Machine" ? 1 : 0
+    cloud_provider_2= var.cloud_provider_2
+    resource_name= var.resource_name
   
 }
 
-module "AWS" {
-    source = "./AWS-Cluster"
-    count  = var.cloud_provider == "AWS" ? 1 : 0
-    resource-name = var.resource-name
+module "Kubernetes" {
+    source = "./Kubernetes-Cluster"
+    count  = var.cloud_provider_1 == "Kubernetes" ? 1 : 0
+    cloud_provider_2 = var.cloud_provider_2
+    resource_name= var.resource_name
   
 }
 
-module "GCP" {
-    source = "./GCP-Cluster"
-    count  = var.cloud_provider == "GCP" ? 1 : 0
-    resource-name = var.resource-name
+module "Serverless-Engine" {
+    source = "./Serverless-Engine"
+    count  = var.cloud_provider_1 == "Serverless-Engine" ? 1 : 0
+    cloud_provider_2= var.cloud_provider_2
+    resource_name= var.resource_name
   
 }
 
