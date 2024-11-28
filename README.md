@@ -3,8 +3,17 @@
 This repository provides a modular Terraform setup that allows users to deploy Virtual Machines, Kubernetes Clusters, and Serverless Engines on AWS, Azure, and GCP. The user can specify the desired deployment platform (VM, Kubernetes, or Serverless Engine) and cloud provider (AWS, Azure, GCP) through the variables.tf file, and Terraform will automatically provision the respective resources on the selected cloud platform.
 
 ## Table of Contents
+- [Deployment Example](#Deployment Example Image)
+
 - [Project Structure](#project-structure)
-- [Deployment Example](#deployment-example)
+
+
+## Deployment Example Image
+
+<div align="center">
+  <img src="Explanation-Picture.PNG" alt="Diagram Description" />
+</div>
+
 
 ## Project Structure
 
@@ -56,7 +65,4 @@ User-Choice-Platform-Tasks
 
 end of plaintext
 
-#Deployment Example Image
-
-![Diagram Description](Explanation-Picture.PNG)
 
