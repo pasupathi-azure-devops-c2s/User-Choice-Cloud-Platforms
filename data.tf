@@ -1,4 +1,4 @@
-/*
+
 data "azurerm_key_vault" "key-vault-access" {
     resource_group_name = var.azure-key-vault-resource-group
     name= var.key-vault
@@ -54,4 +54,3 @@ data "azurerm_key_vault_secret" "google-credential-file-url" {
     name = var.google-credential-file-url
 }
 
-*/
