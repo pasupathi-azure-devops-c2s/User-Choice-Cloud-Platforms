@@ -5,6 +5,7 @@ variable "gcp-region"{
 variable "aws-region"{
     type = string
     description = "Provide the AWS Region detail: "
+   
 }
 
 variable "resource_name" {
