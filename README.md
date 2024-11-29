@@ -12,12 +12,19 @@ This repository provides a modular Terraform setup that allows users to deploy V
 - Set up an Azure Key Vault to store your secrets or credential values, including the Blob storage URL containing the Google Credential file.
 - Update the names of the Key Vault and Key Vault secrets in the .tfvars file.
 
+
 ## Deployment Example Image
 
 <div align="center">
   <img src="Explanation-Picture.PNG" alt="Diagram Description" />
 </div>
 
+## Deployment Steps
+
+1. az login 
+2. Fill that terraform.tfvars file values.
+3. Terraform init
+4. Terraform apply --auto-approve -var-file = "terraform.tfvars"
 
 ## Project Structure
 
