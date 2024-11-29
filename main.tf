@@ -11,6 +11,9 @@ module "Kubernetes" {
     count  = var.cloud_provider_1 == "Kubernetes" ? 1 : 0
     cloud_provider_2 = var.cloud_provider_2
     resource_name= var.resource_name
+    project-id= var.google-project-id
+    #project-id = data.azurerm_key_vault_secret.google-project-name
+
   
 }
 
