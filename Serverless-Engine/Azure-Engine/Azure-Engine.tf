@@ -4,6 +4,15 @@ resource "azurerm_resource_group" "serverless-engine-rg" {
   
 }
 
+resource "azurerm_container_registry" "aks-cr" {
+    name = "seacr01sample"
+    location = azurerm_resource_group.serverless-engine-rg.location
+    resource_group_name = azurerm_resource_group.serverless-engine-rg.name
+    sku = "Basic"
+    admin_enabled = true 
+}
+
+
 resource "azurerm_log_analytics_workspace" "workspace-01" {
     name = "Log-Analystics-WorkSpace-01"
     location = azurerm_resource_group.serverless-engine-rg.location
