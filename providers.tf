@@ -27,6 +27,7 @@ provider "azurerm" {
   client_id = data.azurerm_key_vault_secret.client-id
   client_secret = data.azurerm_key_vault_secret.client-secret
   
+  
   #subscription_id = var.azure-subscription-id
   #tenant_id = var.azure-tenant-id
   #client_id = var.azure-client-id

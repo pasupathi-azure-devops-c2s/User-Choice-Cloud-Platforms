@@ -3,6 +3,9 @@ module "Virtual-Machine" {
     count  = var.cloud_provider_1 == "Virtual-Machine" ? 1 : 0
     cloud_provider_2= var.cloud_provider_2
     resource_name= var.resource_name
+    cidr-vnet = var.cidr-vnet
+    subent-cidr = var.subent-cidr
+    
   
 }
 
@@ -22,6 +25,8 @@ module "Serverless-Engine" {
     count  = var.cloud_provider_1 == "Serverless-Engine" ? 1 : 0
     cloud_provider_2= var.cloud_provider_2
     resource_name= var.resource_name
+    cidr-vnet = var.cidr-vnet
+    subent-cidr = var.subent-cidr
   
 }
 

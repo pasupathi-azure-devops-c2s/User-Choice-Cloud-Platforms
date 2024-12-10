@@ -8,3 +8,15 @@ variable "resource_name" {
     type = string
     description = "Provide the Resource Name:"
 }
+
+
+variable "subent-cidr" {
+    type = string
+    description = "Provide the Subnet CIDR Range: "
+}
+
+
+variable "cidr-vnet"{
+    type = string
+    description = "Provide the VNet CIDR Range:"
+}

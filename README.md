@@ -10,7 +10,7 @@ This repository provides a modular Terraform setup that allows users to deploy V
 **Pre-Requisites**
 - Create an Azure Blob Storage account and upload your Google Credential file. Copy the URL of the file along with its SAS token.
 - Set up an Azure Key Vault to store your secrets or credential values, including the Blob storage URL containing the Google Credential file.
-- Update the names of the Key Vault and Key Vault secrets in the .tfvars file.
+- Update the names of the Key Vault and Key Vault secrets in the terraform.tfvars file.
 
 
 ## Deployment Example Image

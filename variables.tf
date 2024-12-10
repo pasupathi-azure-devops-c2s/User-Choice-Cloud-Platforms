@@ -1,11 +1,24 @@
 variable "gcp-region"{
     type = string
     description = "Provide the GCP Region detail: "
+    default = "us-central1"
 }
 variable "aws-region"{
     type = string
     description = "Provide the AWS Region detail: "
+    default = "us-west1"
    
+}
+
+variable "subent-cidr" {
+    type = string
+    description = "Provide the Subnet CIDR Range: "
+}
+
+
+variable "cidr-vnet"{
+    type = string
+    description = "Provide the VNet CIDR Range:"
 }
 
 variable "resource_name" {
