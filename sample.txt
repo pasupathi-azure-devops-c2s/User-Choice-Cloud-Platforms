@@ -1,0 +1,9 @@
+containers {
+        image = google_container_registry.gcr-1.id
+        resources {
+          limits = {
+            cpu = "2"
+            memory = "1024Mi"
+          }
+        }
+      }

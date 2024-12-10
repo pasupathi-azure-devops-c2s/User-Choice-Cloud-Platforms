@@ -5,7 +5,7 @@ resource "google_project_service" "cloud_run_api" {
 
 resource "google_container_registry" "gcr-1" {
     project = var.project-id
-    location = "us-west2"
+    location = var.gcp-region
   
 }
 
@@ -17,7 +17,7 @@ resource "google_cloud_run_v2_service" "gcp-cloud-run" {
 
     template {
       containers {
-        image = google_container_registry.gcr-1.id
+        image =  "nginx:latest"
         resources {
           limits = {
             cpu = "2"
@@ -25,6 +25,7 @@ resource "google_cloud_run_v2_service" "gcp-cloud-run" {
           }
         }
       }
+      
     }
     depends_on = [ google_project_service.cloud_run_api ]
   
