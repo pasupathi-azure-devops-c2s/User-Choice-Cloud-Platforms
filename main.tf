@@ -27,6 +27,9 @@ module "Serverless-Engine" {
     resource_name= var.resource_name
     cidr-vnet = var.cidr-vnet
     subent-cidr = var.subent-cidr
+    project-id = var.google-project-id
+    gcp-region = var.gcp-region
+    
   
 }
 

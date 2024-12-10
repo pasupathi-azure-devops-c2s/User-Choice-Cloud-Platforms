@@ -3,15 +3,21 @@ resource "google_project_service" "cloud_run_api" {
   
 }
 
+resource "google_container_registry" "gcr-1" {
+    project = var.project-id
+    location = "us-west2"
+  
+}
+
 resource "google_cloud_run_v2_service" "gcp-cloud-run" {
     name = var.resource_name
-    location = ""
-    ingress = ""
-    project = ""
+    location = var.gcp-region
+    ingress = "ALL"
+    project = var.project-id
 
     template {
       containers {
-        image = ""
+        image = google_container_registry.gcr-1.id
         resources {
           limits = {
             cpu = "2"

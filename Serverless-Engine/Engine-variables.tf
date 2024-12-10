@@ -18,3 +18,15 @@ variable "subent-cidr" {
     type = string
     description = "Provide the Subnet CIDR Range: "
 }
+
+variable "project-id" {
+    type = string
+    description = "Provide the GCP Project ID: "
+  
+}
+
+variable "gcp-region"{
+    type = string
+    description = "Provide the GCP Region detail: "
+
+}

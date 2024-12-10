@@ -21,5 +21,7 @@ module "GCP" {
     source = "./GCP-Engine"
     count = var.cloud_provider_2 == "GCP" ? 1 : 0
     resource_name = var.resource_name
+    project-id = var.project-id
+    gcp-region = var.gcp-region
 }
 
