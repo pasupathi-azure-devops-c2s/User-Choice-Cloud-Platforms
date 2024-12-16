@@ -6,11 +6,11 @@ terraform {
     }
 
     aws = {
-        source  = "hashicorp/aws"
-        version = "~> 5.0"
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
 
-     google = {
+    google = {
       source  = "hashicorp/google"
       version = "~> 3.5"
     }
@@ -19,37 +19,22 @@ terraform {
   required_version = ">= 1.0"
 }
 
-
 provider "azurerm" {
   features {}
-  subscription_id = data.azurerm_key_vault_secret.subscription-id
-  tenant_id = data.azurerm_key_vault_secret.tenant-id
-  client_id = data.azurerm_key_vault_secret.client-id
-  client_secret = data.azurerm_key_vault_secret.client-secret
-  
-  
-  #subscription_id = var.azure-subscription-id
-  #tenant_id = var.azure-tenant-id
-  #client_id = var.azure-client-id
-  #client_secret = var.azure-client-secret-id
+  #subscription_id = data.azurerm_key_vault_secret.subscription_id.value
+  #tenant_id       = data.azurerm_key_vault_secret.tenant_id.value
+  #client_id       = data.azurerm_key_vault_secret.client_id.value
+  #client_secret   = data.azurerm_key_vault_secret.client_secret.value
 }
 
 provider "aws" {
-  region = var.aws-region 
-  secret_key = data.azurerm_key_vault_secret.aws-access-key-secret
-  access_key = data.azurerm_key_vault_secret.aws-access-key-id
-
-  #secret_key = var.aws-secret-access-key
-  #access_key = var.aws-access-key-id
+  region     = var.aws-region
+  secret_key = data.azurerm_key_vault_secret.aws_secret_access_key.value
+  access_key = data.azurerm_key_vault_secret.aws_access_key_id.value
 }
 
-# Specify the required provider
 provider "google" {
-  project = data.azurerm_key_vault_secret.google-project-name
-  region  = var.gcp-region       
-  credentials = file(data.azurerm_key_vault_secret.google-credential-file-url)
-  
-  #project = var.google-project-id
-  #credentials = file(var.google-credential-file-url)
-  
+  project     = data.azurerm_key_vault_secret.google_project_id.value
+  region      = var.gcp-region
+  credentials = file("c:\\Users\\PasupathiKumarS\\Downloads\\terraform-tasks-439510-d1cae900bb5a.json")
 }

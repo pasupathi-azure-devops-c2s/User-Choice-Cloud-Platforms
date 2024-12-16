@@ -1,6 +1,7 @@
 variable "cloud_provider_2" {
     type = string
     description = "Cloud provider for the VM (aws, azure, gcp)"
+    
   
 }
 

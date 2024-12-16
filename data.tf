@@ -1,56 +1,46 @@
-
-data "azurerm_key_vault" "key-vault-access" {
-    resource_group_name = var.azure-key-vault-resource-group
-    name= var.key-vault
-  
+data "azurerm_key_vault" "key_vault_access" {
+  name                = "Cloud-Secret-vault"
+  resource_group_name = "Cloud-Secrets-RG"
 }
 
-data "azurerm_key_vault_secret" "subscription-id" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.azure-subscription-id
-  
+data "azurerm_key_vault_secret" "subscription_id" {
+  name         = "Azure-Subscription-ID"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
 }
 
-data "azurerm_key_vault_secret" "tenant-id" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.azure-tenant-id
-  
+data "azurerm_key_vault_secret" "tenant_id" {
+  name         = "Azure-Tenant-ID"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.subscription_id]
 }
 
-data "azurerm_key_vault_secret" "client-id" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.azure-client-id
-  
+data "azurerm_key_vault_secret" "client_id" {
+  name         = "Azure-Client-ID"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.tenant_id]
 }
 
-
-data "azurerm_key_vault_secret" "client-secret" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.azure-client-secret-id
-  
+data "azurerm_key_vault_secret" "client_secret" {
+  name         = "Azure-Client-Secret-Value"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.client_id]
 }
 
-
-data "azurerm_key_vault_secret" "aws-access-key-id" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.aws-access-key-id
-  
+data "azurerm_key_vault_secret" "aws_access_key_id" {
+  name         = "AWS-Access-Key-ID"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.client_secret]
 }
 
-data "azurerm_key_vault_secret" "aws-access-key-secret" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.aws-secret-access-key
-  
+data "azurerm_key_vault_secret" "aws_secret_access_key" {
+  name         = "AWS-Secret-Access-Key"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.aws_access_key_id]
 }
 
-
-data "azurerm_key_vault_secret" "google-project-name" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.google-project-id
-}
-
-data "azurerm_key_vault_secret" "google-credential-file-url" {
-    key_vault_id = data.azurerm_key_vault.key-vault-access.id
-    name = var.google-credential-file-url
+data "azurerm_key_vault_secret" "google_project_id" {
+  name         = "Google-Project-ID"
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on   = [data.azurerm_key_vault_secret.aws_secret_access_key]
 }
 
