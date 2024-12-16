@@ -103,38 +103,18 @@ resource "aws_apprunner_vpc_connector" "vpc_connector" {
   
 }
 
-resource "aws_secretsmanager_secret" "docker_hub_credentials" {
-  name = "docker-hub-credentials"
-
-  description = "Docker Hub credentials for App Runner authentication"
-}
-
-resource "aws_secretsmanager_secret_version" "docker_hub_secret_version" {
-  secret_id     = aws_secretsmanager_secret.docker_hub_credentials.id
-  secret_string = jsonencode({
-    username = "pasupathikumar819",
-    password = "NewPassword@1234"
-  })
-}
-
-resource "aws_apprunner_connection" "docker-connection" {
-  connection_name = "docker-hub-connection"
-
-  
-  provider_type = "GITHUB" 
-}
 
 resource "aws_apprunner_service" "name" {
     service_name = var.resource_name
 
     source_configuration {
-      authentication_configuration {
-      connection_arn = aws_apprunner_connection.docker-connection.arn
-    }
-
+      
       image_repository {
-          image_identifier      = "pasupathikumar819/pasupathikumar-portfolio:latest"
-          image_repository_type = "DOCKER"  # Specifies that the source is ECR
+          image_identifier      = "165103618750.dkr.ecr.us-west-2.amazonaws.com/initial-repos:latest"
+          image_repository_type = "ECR"  # Specifies that the source is ECR
+    }
+    authentication_configuration {
+      access_role_arn = aws_iam_role.app_runner_build_role.arn
     }
 
     }
