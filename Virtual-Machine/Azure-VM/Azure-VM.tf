@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "azure-vm-rg" {
     name = "Azure-VM-RG"
-    location = "eastus"
+    location = var.azure-region
   
 }
 

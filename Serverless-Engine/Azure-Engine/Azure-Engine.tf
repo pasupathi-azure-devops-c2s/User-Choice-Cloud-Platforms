@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "serverless-engine-rg" {
     name = "Serverless-Engine-RG"
-    location = "eastus"
+    location = var.azure-region
   
 }
 

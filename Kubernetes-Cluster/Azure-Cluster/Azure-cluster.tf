@@ -2,7 +2,7 @@
 #AKS Cluster Code
 resource "azurerm_resource_group" "aks-rg" {
     name = "AKS-Cluster-RG"
-    location = "eastus"  
+    location = var.azure-region
 }
 resource "azurerm_container_registry" "aks-cr" {
     name = "akscr01sample"

@@ -10,6 +10,7 @@ module "Azure" {
     source = "./Azure-Cluster"
     count = var.cloud_provider_2 == "Azure" ? 1 : 0
     resource_name = var.resource_name
+    azure-region = var.azure-region
   
 }
 

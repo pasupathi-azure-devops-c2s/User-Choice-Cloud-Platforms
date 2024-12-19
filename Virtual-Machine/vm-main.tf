@@ -11,6 +11,7 @@ module "Azure" {
     resource_name = var.resource_name
     cidr-vnet = var.cidr-vnet
     subent-cidr = var.subent-cidr
+    azure-region = var.azure-region
   
 }
 

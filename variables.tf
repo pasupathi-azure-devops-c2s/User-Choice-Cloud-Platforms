@@ -10,6 +10,11 @@ variable "aws-region"{
    
 }
 
+variable "azure-region" {
+    description = "Provide the Azure Common Region to provision the Azure resources inside that region: "
+    type = string
+}
+
 variable "subent-cidr" {
     type = string
     description = "Provide the Subnet CIDR Range: "

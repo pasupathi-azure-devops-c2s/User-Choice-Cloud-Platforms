@@ -31,3 +31,8 @@ variable "gcp-region"{
     description = "Provide the GCP Region detail: "
 
 }
+
+variable "azure-region" {
+    description = "Provide the Azure Common Region to provision the Azure resources inside that region: "
+    type = string
+}
