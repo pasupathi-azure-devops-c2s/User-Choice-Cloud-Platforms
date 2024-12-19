@@ -13,14 +13,14 @@ resource "google_project_service" "storage-service" {
 resource "google_project_iam_member" "cluster-admin" {
     project = var.project-id
     role = "roles/container.clusterAdmin"
-    member = "user:kumarmarimuthu99@gmail.com"
+    member = "user:${var.gcp-iam-mail-id}"
   
 }
 
 resource "google_project_iam_member" "storage-menber" {
     project = var.project-id
     role = "roles/storage.objectAdmin"
-    member = "user:kumarmarimuthu99@gmail.com"
+    member = "user:${var.gcp-iam-mail-id}"
   
 }
 

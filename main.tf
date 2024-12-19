@@ -6,6 +6,10 @@ module "Virtual-Machine" {
     cidr-vnet = var.cidr-vnet
     subent-cidr = var.subent-cidr
     azure-region = var.azure-region
+    admin_username = var.admin_username
+    azure-admin-password = data.azurerm_key_vault_secret.vm-admin-password
+    aws-region-2 = var.aws-region-2
+    
     
   
 }
@@ -17,6 +21,8 @@ module "Kubernetes" {
     resource_name= var.resource_name
     project-id= data.azurerm_key_vault_secret.google_project_id.value
     azure-region = var.azure-region
+    gcp-iam-mail-id = var.gcp-iam-mail-id
+    aws-region-2 = var.aws-region-2
     #project-id = data.azurerm_key_vault_secret.google-project-name
 
   
@@ -32,6 +38,6 @@ module "Serverless-Engine" {
     project-id = data.azurerm_key_vault_secret.google_project_id.value
     gcp-region = var.gcp-region
     azure-region = var.azure-region
-  
+    aws-region-2 = var.aws-region-2
 }
 

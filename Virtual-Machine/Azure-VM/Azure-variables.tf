@@ -17,3 +17,14 @@ variable "azure-region" {
     description = "Provide the Azure Common Region to provision the Azure resources inside that region: "
     type = string
 }
+
+variable "admin_username" {
+    description = "Provide the Admin Username to provision the resource based on your username: "
+    type = string
+}
+
+variable "azure-admin-password" {
+    description = "Provide the Admin User Password to provision the resource based on your user password: "
+    type = string
+  
+}

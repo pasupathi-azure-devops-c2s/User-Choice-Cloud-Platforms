@@ -4,6 +4,7 @@ module "AWS" {
     resource_name = var.resource_name
     cidr-vnet = var.cidr-vnet
     subent-cidr = var.subent-cidr
+    aws-region-2 = var.aws-region-2
     
   
 }

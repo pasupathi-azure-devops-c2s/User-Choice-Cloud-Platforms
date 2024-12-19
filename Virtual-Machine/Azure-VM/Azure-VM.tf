@@ -57,8 +57,8 @@ resource "azurerm_linux_virtual_machine" "ubuntu-vm" {
     resource_group_name = azurerm_resource_group.azure-vm-rg.name
     size = "Standard_DS1_v2"
 
-    admin_username = "Pasupathikumar"
-    admin_password = "NewPassword@1234"
+    admin_username = var.admin_username
+    admin_password = var.azure-admin-password
     disable_password_authentication = false
 
     network_interface_ids = [azurerm_network_interface.azure-interface.id]

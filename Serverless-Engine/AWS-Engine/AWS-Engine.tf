@@ -98,7 +98,7 @@ resource "aws_vpc" "serverless-vpc" {
 resource "aws_subnet" "serverless-subnet" {
     vpc_id = aws_vpc.serverless-vpc.id
     cidr_block = var.subent-cidr
-    availability_zone = "us-west-2a"
+    availability_zone = var.aws-region-2
     map_public_ip_on_launch = true
   
 }
