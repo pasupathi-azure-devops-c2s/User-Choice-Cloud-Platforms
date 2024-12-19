@@ -6,7 +6,7 @@ variable "gcp-region"{
 variable "aws-region"{
     type = string
     description = "Provide the AWS Region detail: "
-    default = "us-west1"
+    default = "us-west-1"
    
 }
 
@@ -26,18 +26,38 @@ variable "cidr-vnet"{
 variable "resource_name" {
     type = string
     description = "Provide the Resource Name:"
-    default = "User-Choice-SE-01"
+    #default = "userchoice01se"
 }
 
 variable "cloud_provider_2" {
   description = "Cloud provider for the VM (AWS, Azure, GCP)"
   type        = string
-  default = "AWS"
+  #default = "GCP"
 }
 
 variable "cloud_provider_1" {
   description = "Which Deployment Cloud Platform You Need to Provision? \n Like Virtual Machine (or) Kubernetes Service (or) Serverless Engine?"
   type = string
-  default = "Serverless-Engine"
+  #default = "Kubernetes"
   
+}
+
+variable "admin_username" {
+    description = "Provide the Admin Username to provision the resource based on your username: "
+    type = string
+}
+
+variable "aws-region-2" {
+    description = "Provide the AWS Second region for subents: \n If you provide the main region as 'us-west-1', You need to maintain subnetwork regions like 'us-west-1a', 'us-west1-b', etc..."
+    type = string
+}
+
+variable "aws-region-3" {
+    description = "Provide the AWS Third region for another subnets: \n If you provide the main region as 'us-west-1', You need to maintain subnetwork regions like 'us-west-1a', 'us-west1-b', etc..."
+    type = string
+}
+
+variable "gcp-region-2" {
+    description = "Provide the GCP Second region based on the main GCP Region: \n \n If you provide the main region as 'us-west-1', You need to maintain subnetwork regions like 'us-west-1a', 'us-west1-b', etc..."
+    type = string
 }

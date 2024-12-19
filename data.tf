@@ -1,5 +1,5 @@
 data "azurerm_key_vault" "key_vault_access" {
-  name                = "Cloud-Secret-vault"
+  name                = "Pasupathikumar"
   resource_group_name = "Cloud-Secrets-RG"
 }
 
@@ -44,3 +44,8 @@ data "azurerm_key_vault_secret" "google_project_id" {
   depends_on   = [data.azurerm_key_vault_secret.aws_secret_access_key]
 }
 
+data "azurerm_key_vault_secret" "vm-admin-password"{
+  name = ""
+  key_vault_id = data.azurerm_key_vault.key_vault_access.id
+  depends_on = [ data.azurerm_key_vault_secret.google_project_id ]
+}
